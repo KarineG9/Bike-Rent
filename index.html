@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Reservation de Vélo'v</title>
+
+    <meta name="description" content="Réservez rapidement votre vélo'v">
+    <meta name="keywords" content="Vélo'v">
+    <meta name="author" content="Grascia Karine">
+    <!--bootstrap-->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+
+    <!--icones-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+        integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/MediaQ.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+        integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+        crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js"
+        integrity="sha512-WXoSHqw/t26DszhdMhOXOkI7qCiv5QWXhH9R7CgvgZMHz1ImlkVQ3uNsiQKu5wwbbxtPzFXd1hK4tzno2VqhpA=="
+        crossorigin=""></script>
+    <link rel="stylesheet" href="dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="dist/MarkerCluster.Default.css" />
+    <script src="dist/leaflet.markercluster.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logos">
+            <a href="#"><img class="logovelov" src="images/logo-velov.png" alt="Logo velov"></a>
+            <nav>
+                <ul>
+                    <li><a href="#">ACCUEIL</a></li>
+                    <li><a href="#map-panel">RESERVATION</a></li>
+                </ul>
+            </nav>
+            <img class="villelyon" src="images/Ville-de-Lyon.png" alt="Logo Ville de Lyon" />
+        </div>
+    </header>
+
+    <div id="presentation">
+        <p>Reservez votre vélo'v en quelques clics !</p>
+    </div>
+
+    <div class="container">
+        <div class="slider">
+            <div class="btn-left" id="prevTuto"> <i class="fas fa-chevron-left"></i></div>
+            <div class="btn-right" id="nextTuto"> <i class="fas fa-chevron-right"></i></div>
+            <div class="btn-play-pause" id="PlayPauseBtnTuto">
+                <i class="far fa-play-circle"></i>
+                <i class="fas fa-pause"></i>
+            </div>
+
+            <div id="slider-images"></div>
+        </div>
+    </div>
+
+    <div id="map-panel">
+        <div id="map"></div>
+        <div id="station-detail">
+            <h1>Détail de la station</h1>
+            <p id="nomstation"></p>
+            <p id="addressStation">Adresse</p>
+            <p id="bike">Vélos disponibles</p>
+            <p id="stands">Places disponibles</p>
+            <p id="status">Statut</p>
+            <hr />
+            <div id="annulationText"></div>
+
+            <div id="container-booking">
+                <form method="post">
+                    <fieldset>
+                        <input id="nom" type="text" name="nom" class="form-control" placeholder="Nom" />
+                        <br />
+                        <input id="prenom" type="text" class="form-control" name="prenom" placeholder="Prénom" />
+                        <br /><br />
+                        <input id="btn-form" class="btn btn-default" type="submit" value="Confirmer et signer">
+                    </fieldset>
+                </form>
+
+                <div id="no-content-form"></div>
+
+                <div id="content-canvaBtn">
+                    <canvas id="draw"></canvas>
+                    <input id="btn-valider" type="submit" value="Valider"></input>
+                    <input id="btn-effacer" type="submit" value="Effacer"></input>
+                    <div id="confirmText"></div>
+                </div>
+            </div>
+        </div>
+        <section id="recapResa">
+            <div class="infos">
+                <div id="resaText"></div>
+                <div id="countdown"></div>
+                <input id="btn-annuler" type="submit" value="Annuler la reservation"></input>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/reservation.js"></script>
+    <script src="js/signature.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
